@@ -1,8 +1,8 @@
 {
-  "name": "grapesjs-blocks-flexbox",
-  "version": "0.1.1",
+  "name": "@fathym-it/page-builder-powerbi",
+  "version": "0.1.2",
   "description": "Add the flexbox block",
-  "main": "dist/grapesjs-blocks-flexbox.min.js",
+  "main": "dist/@fathym-it/page-builder-powerbi.min.js",
   "scripts": {
     "lint": "eslint src",
     "v:patch": "npm version --no-git-tag-version patch",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/artf/grapesjs-blocks-flexbox.git"
+    "url": "https://github.com/fathym-it/page-builder-powerbi.git"
   },
   "keywords": [
     "grapesjs",
     "plugin",
-    "flexbox",
+    "powerbi",
     "wysiwyg"
   ],
-  "author": "Artur Arseniev",
+  "author": "Michael Gearhardt",
   "license": "BSD-3-Clause",
   "babel": {
     "presets": [
