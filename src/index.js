@@ -1,24 +1,51 @@
 import grapesjs from 'grapesjs';
+import loadComponents from './components';
 import loadBlocks from './blocks';
+import { powerbi } from './consts';
 
-export default grapesjs.plugins.add('gjs-blocks-flexbox', (editor, config = {}) => {
-  // Default options
+export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
   let defaults = {
-    // Use this to extend the default flexbox block
-    flexboxBlock: {},
+    blocks: [powerbi.tagName],
 
-    // Classes prefix
-    stylePrefix: '',
+    // Default style
+    defaultStyle: true,
 
-    // Row label
-    labelRow: 'Row',
+    // Default start time, eg. '2018-01-25 00:00'
+    startTime: '',
 
-    // Column label
-    labelColumn: 'Column',
+    // Text to show when the countdown is ended
+    endText: 'EXPIRED',
+
+    // Date input type, eg, 'date', 'datetime-local'
+    dateInputType: 'date',
+
+    // Countdown class prefix
+    countdownClsPfx: 'countdown',
+
+    // Countdown label
+    labelCountdown: 'Countdown',
+
+    // Countdown category label
+    labelCountdownCategory: 'Extra',
+
+    // Days label text used in component
+    labelDays: 'days',
+
+    // Hours label text used in component
+    labelHours: 'hours',
+
+    // Minutes label text used in component
+    labelMinutes: 'minutes',
+
+    // Seconds label text used in component
+    labelSeconds: 'seconds',
   };
 
-  const opts = { ...config, ...defaults };
+  let config = { ...defaults, ...opts };
 
-  // Add blocks
-  loadBlocks(editor, opts);
+  // Add components
+  loadComponents(editor, config);
+
+  // Add components
+  loadBlocks(editor, config);
 });
