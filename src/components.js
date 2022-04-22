@@ -57,9 +57,11 @@ export default function (editor, opts = {}) {
 
         // Add a basic countdown template if it's not yet initialized
         if (!comps.length) {
+          var reportKey = '{[ reportKey ]}';
+
           comps.reset();
           comps.add(`
-            <iframe data-js="powerbi-embed" src="https://app.powerbi.com/view?r=${pfx}"></iframe>
+            <iframe data-js="powerbi-embed" src="https://app.powerbi.com/view?r=${reportKey}"></iframe>
           `);
         }
       },

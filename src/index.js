@@ -13,6 +13,9 @@ export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
     // Default style
     defaultStyle: true,
 
+    // Icon
+    blockIcon: 'fa-area-chart',
+
     // Label
     blockLabel: 'PowerBI',
 

@@ -16,7 +16,7 @@ export default function (editor, opts = {}) {
     bm.add(powerbi.tagName, {
       label: opts.blockLabel || 'PowerBI',
       category: opts.blockCategory || 'Reporting',
-      attributes: { class: 'fa fa-area-chart' },
+      attributes: { class: `fa ${opts.blockIcon || 'fa-area-chart'}` },
       content: `
         <div class="${pfx}" data-gjs-type="${powerbi.tagName}"></div>
         ${style}
