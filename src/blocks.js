@@ -9,21 +9,6 @@ export default function (editor, opts = {}) {
       text-align: center;
       font-family: Helvetica, serif;
     }
-    .${pfx}-block {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 10px;
-    }
-    .${pfx}-digit {
-      font-size: 5rem;
-    }
-    .${pfx}-endtext {
-      font-size: 5rem;
-    }
-    .${pfx}-cont,
-    .${pfx}-block {
-      display: inline-block;
-    }
   </style>`
     : '';
 

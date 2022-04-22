@@ -13,32 +13,11 @@ export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
     // Default style
     defaultStyle: true,
 
-    // Default start time, eg. '2018-01-25 00:00'
-    startTime: '',
+    // Label
+    blockLabel: 'PowerBI',
 
-    // Text to show when the countdown is ended
-    endText: 'EXPIRED',
-
-    // Date input type, eg, 'date', 'datetime-local'
-    dateInputType: 'date',
-
-    // Countdown label
-    labelCountdown: 'Countdown',
-
-    // Countdown category label
-    labelCountdownCategory: 'Extra',
-
-    // Days label text used in component
-    labelDays: 'days',
-
-    // Hours label text used in component
-    labelHours: 'hours',
-
-    // Minutes label text used in component
-    labelMinutes: 'minutes',
-
-    // Seconds label text used in component
-    labelSeconds: 'seconds',
+    // Category label
+    blockCategory: 'Reporting',
   };
 
   let config = { ...defaults, ...opts };
