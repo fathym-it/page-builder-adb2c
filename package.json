@@ -1,6 +1,6 @@
 {
   "name": "@fathym-it/page-builder-powerbi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Add the flexbox block",
   "main": "dist/@fathym-it/page-builder-powerbi.min.js",
   "scripts": {
