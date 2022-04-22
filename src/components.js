@@ -9,7 +9,7 @@ export default function (editor, opt = {}) {
   const defaultView = defaultType.view;
   const textModel = textType.model;
   const textView = textType.view;
-  const pfx = c.countdownClsPfx;
+  const pfx = c.classPfx;
 
   domc.addType(powerbi.tagName, {
     model: defaultModel.extend(

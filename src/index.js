@@ -7,6 +7,9 @@ export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
   let defaults = {
     blocks: [powerbi.tagName],
 
+    // Countdown class prefix
+    classPfx: 'powerbi-embed',
+
     // Default style
     defaultStyle: true,
 
@@ -18,9 +21,6 @@ export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
 
     // Date input type, eg, 'date', 'datetime-local'
     dateInputType: 'date',
-
-    // Countdown class prefix
-    countdownClsPfx: 'countdown',
 
     // Countdown label
     labelCountdown: 'Countdown',

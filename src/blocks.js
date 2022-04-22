@@ -2,7 +2,7 @@ import { powerbi } from './consts';
 
 export default function (editor, opts = {}) {
   const bm = editor.BlockManager;
-  const pfx = opts.countdownClsPfx;
+  const pfx = opts.classPfx;
   const style = opts.defaultStyle
     ? `<style>
     .${pfx} {
