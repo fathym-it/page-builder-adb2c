@@ -1,24 +1,40 @@
-import { powerbi } from './consts';
+import { countdownRef } from './consts';
 
-export default function (editor, opts = {}) {
+export default function (editor, opt = {}) {
+  const c = opt;
   const bm = editor.BlockManager;
-  const pfx = opts.classPfx;
-  const style = opts.defaultStyle
+  const pfx = c.countdownClsPfx;
+  const style = c.defaultStyle
     ? `<style>
     .${pfx} {
       text-align: center;
       font-family: Helvetica, serif;
     }
+    .${pfx}-block {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 10px;
+    }
+    .${pfx}-digit {
+      font-size: 5rem;
+    }
+    .${pfx}-endtext {
+      font-size: 5rem;
+    }
+    .${pfx}-cont,
+    .${pfx}-block {
+      display: inline-block;
+    }
   </style>`
     : '';
 
-  if (opts.blocks.indexOf(powerbi.tagName) >= 0) {
-    bm.add(powerbi.tagName, {
-      label: opts.blockLabel || 'PowerBI',
-      category: opts.blockCategory || 'Reporting',
-      attributes: { class: `fa ${opts.blockIcon || 'fa-area-chart'}` },
+  if (c.blocks.indexOf(countdownRef) >= 0) {
+    bm.add(countdownRef, {
+      label: c.labelCountdown,
+      category: c.labelCountdownCategory,
+      attributes: { class: 'fa fa-clock-o' },
       content: `
-        <div class="${pfx}" data-gjs-type="${powerbi.tagName}"></div>
+        <div class="${pfx}" data-gjs-type="countdown"></div>
         ${style}
       `,
     });

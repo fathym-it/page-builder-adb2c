@@ -1,33 +1,59 @@
 import grapesjs from 'grapesjs';
 import loadComponents from './components';
 import loadBlocks from './blocks';
-import { powerbi } from './consts';
+import { countdownRef } from './consts';
 
-export default grapesjs.plugins.add(powerbi.tagName, (editor, opts = {}) => {
-  let defaults = {
-    blocks: [powerbi.tagName],
+export default grapesjs.plugins.add(
+  'gjs-component-countdown',
+  (editor, opts = {}) => {
+    let c = opts;
 
-    // Countdown class prefix
-    classPfx: 'powerbi-embed',
+    let defaults = {
+      blocks: [countdownRef],
 
-    // Default style
-    defaultStyle: true,
+      // Default style
+      defaultStyle: true,
 
-    // Icon
-    blockIcon: 'fa-area-chart',
+      // Default start time, eg. '2018-01-25 00:00'
+      startTime: '',
 
-    // Label
-    blockLabel: 'PowerBI',
+      // Text to show when the countdown is ended
+      endText: 'EXPIRED',
 
-    // Category label
-    blockCategory: 'Reporting',
-  };
+      // Date input type, eg, 'date', 'datetime-local'
+      dateInputType: 'date',
 
-  let config = { ...defaults, ...opts };
+      // Countdown class prefix
+      countdownClsPfx: 'countdown',
 
-  // Add components
-  loadComponents(editor, config);
+      // Countdown label
+      labelCountdown: 'Countdown',
 
-  // Add components
-  loadBlocks(editor, config);
-});
+      // Countdown category label
+      labelCountdownCategory: 'Extra',
+
+      // Days label text used in component
+      labelDays: 'days',
+
+      // Hours label text used in component
+      labelHours: 'hours',
+
+      // Minutes label text used in component
+      labelMinutes: 'minutes',
+
+      // Seconds label text used in component
+      labelSeconds: 'seconds',
+    };
+
+    // Load defaults
+    for (let name in defaults) {
+      if (!(name in c)) c[name] = defaults[name];
+    }
+
+    // Add components
+    loadComponents(editor, c);
+
+    // Add components
+    loadBlocks(editor, c);
+  }
+);
